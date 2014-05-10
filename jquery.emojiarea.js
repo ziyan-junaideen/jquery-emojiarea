@@ -418,12 +418,15 @@
 	EmojiMenu.prototype.reposition = function() {
 		var $button = this.emojiarea.$button;
 		var offset = $button.offset();
-		offset.top += $button.outerHeight();
-		offset.left += Math.round($button.outerWidth() / 2);
+		//offset.top += $button.outerHeight();
+		//offset.left += Math.round($button.outerWidth() / 2);
+		
+		top = offset.top - $button.outerHeight()
+	  left = offset.left + $button.outerWidth() - @$menu.width()
 		
 		this.$menu.css({
-			top: offset.top,
-			left: offset.left
+			top: top,
+			left: left
 		});
 	};
 
